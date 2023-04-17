@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts Us</title>
+    <script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    
+    <nav class="navbar bg-light navbar-light navbar-expand-lg">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">F L A M I E</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a href="index.html" class="nav-link ">Trang chủ</a></li>
+                   
+                    <li class="nav-item"> <a href="Service.html" class="nav-link">Dịch vụ</a></li>
+                    <li class="nav-item"> <a href="Contact.html" class="nav-link active">Liên hệ</a></li>
+                   
+                    <li class="nav-item"> <a href="News2.html" class="nav-link">Tin tức</a></li>
+                   	<li class="nav-item"> <a href="Service copy.html" class="nav-link">Đặt phòng</a>
+					<li class="nav-item"> <a href="Login.html" class="btn btn-dark "> Đăng nhập</a> 
+					</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="contact-item active">
+        <img src="https://cache.marriott.com/marriottassets/marriott/HANJW/hanjw-pool-4974-hor-feat.jpg?output-quality=70&interpolation=progressive-bilinear&downsize=1180px:*"
+            alt="" class="w-100">
+    </div>
+
+    <!-- Main section -->
+    <section class="container mt-5">
+        <div class="row gap-row">
+
+            <!-- Info -->
+            <div class="col-13 col-lg-7">
+                <div>
+                    <h1>FLAMIE Hotel & Resort</h1>
+                    <div class="icon-label"><i class="fas fa-map-pin icon"></i><p class="ml-2">No 8 Do Duc Duc Road, Me Tri Ward, South Tu Liem District Hanoi, Vietnam</p></div>
+                    <div class="icon-label"><i class="fas fa-envelope icon"></i><p class="ml-2">myworldhotel@gmail.com</p></div>
+                    <div class="icon-label"><i class="fas fa-phone icon"></i><p class="ml-2">0906906090</p></div>
+                </div>
+
+                <form method="get" accept-charset="utf-8" style="width:600px;margin: 0px auto;" id="formDemo">
+                    <fieldset>
+                    <div>
+                        <label><b>Email</b></label>
+				<input name="Email" type="email" class="form-control" placeholder="" required>
+                    </div>
+                    <div>
+                        <label><b>Họ tên</b></label>
+                    
+				<input name="Fullname" type="text" class="form-control" placeholder="" required>
+                
+                    </div>
+                    <div>
+                        <label><b>Số điện thoại</b></label> 
+                        
+				<input name="sodienthoai" type="number" class="form-control" placeholder="" required>
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="comment"><b>Nội dung</b></label>
+                        <textarea class="form-control" rows="5" input name="Noidung"  placeholder=""></textarea> 
+                      </div>
+                      <button type="button" class="btn btn-secondary btn-lg btn-block">Gửi</button>
+                </form>
+                <script type="text/javascript">
+
+                    $(document).ready(function() {
+                        
+                        
+                        $("#formDemo").validate({
+                                    rules: {
+                                        Fullname: {
+                                            required: true,
+                                            minlength: 10
+                                        },
+                                        Email: {
+							required: true,
+							minlength: 5
+						},
+                                        sodienthoai: {
+                                            required: true,
+                                            minlength: 10
+                                        },
+
+                                      Noidung:{
+                                          required:true,
+                                          minlength:100
+                                      }
+                                    },
+                                    messages: {
+                                        Fullname: {
+                                        required:"Vui lòng nhập họ và tên",
+                                        minlength:"Vui lòng nhập đầy đủ."
+                                        },
+                                       sodienthoai:{
+                                        required: "Vui lòng nhập số điện thoại",
+                                            minlength: "Địa thoại không hợp lệ, vui lòng quý khách nhập lại."
+                                       },
+                                        Email: {
+                                            required: " Vui lòng nhập email",
+                                            minlength: "Địa chỉ không hợp lệ, vui lòng quý khách nhập lại."
+                                        },
+                                     
+                                       Noidung:{
+                                           required:"Nhập nội dung",
+                                           minlength:"Nhập nội dung chưa đủ."
+                                       }
+                                    }
+                                });
+                    });
+                    </script>
+
+            </div>
+
+            <!-- Map -->
+            <div class="col-sm-5 col-lg-5 shadow">
+                <div class="">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4632341056713!2d106.66607259001876!3d10.775788941450397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9023a3a85d%3A0xdee5c99a7b02feab!2sHuflit!5e0!3m2!1sen!2s!4v1638282926174!5m2!1sen!2s"
+                        width="100%" height="400px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-5">
+        <div class="contianer-fluid p-0">
+            <div class="row text-left">
+                <div class="col-md-5 col-md-5">
+                    <h1 class="text-dark">MY WORLD HOTEL & RESORT</h1>
+                    <p class="text-muted">No 8 Do Duc Duc Road, Me Tri Ward, South Tu Liem District
+                        Hanoi, Vietnam</p>
+                    <p class="pt-4 text-muted">
+                        Coppyright@2021 FLAMIE Hotel & Resort
+                    </p>
+                </div>
+                <div class="col-md-5">
+                    <h4 class="text-dark">
+                        ĐĂNG KÍ</h4>
+                    <p class="text-muted">Đăng ký để nhận thông tin mới nhất từ chúng tôi.</p>
+                    <p class="text-muted">Reservations-hanoi@flamie.com</p>
+                    <form class="form-inline">
+                        <div class="col-pl">
+                            <div class="input-group pr-5">
+                                <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-arrow-right"></i>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <h4 class="text-dark">THEO DÕI</h4>
+                    <p class="text-muted"></p>
+                    <div class="column">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Monsterrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/style.css">
+
+</body>
+
+
+</html>

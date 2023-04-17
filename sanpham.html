@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán quần áo</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Bán quần áo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="demo1.html">Trang chủ</a>
+              </li>
+              <li class="nav-item dropdown">
+             
+                  <a class="nav-link active dropdown-toggle" href="sanpham.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sản phẩm
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-bs-popper="none">
+                    <li><a class="dropdown-item" href="sanpham.html">Áo</a></li>
+                    <li><a class="dropdown-item" href="sanpham2.html">Quần</a></li>
+                    <li><a class="dropdown-item" href="#">Phụ kiện</a></li>
+                  </ul>
+               </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Contact.html">Liên hệ </a>
+                </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Mua ngay</a>
+              </li>  
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <style>.dropdown-menu {
+          top: 100%;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+          transform: translateY(-10px);
+        }
+        
+        .nav-item:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }</style>
+    
+    <main>
+      <script>
+        $(function() {
+          var products = $('.product-item');
+          
+          $('#sort-select').on('change', function() {
+            var optionSelected = $("option:selected", this);
+            var valueSelected = this.value;
+        
+            if (valueSelected === 'name-asc') {
+              products.sort(function(a, b) {
+                return $(a).find('.card-title').text().localeCompare($(b).find('.card-title').text());
+              });
+            } else if (valueSelected === 'name-desc') {
+              products.sort(function(a, b) {
+                return $(b).find('.card-title').text().localeCompare($(a).find('.card-title').text());
+              });
+            } else if (valueSelected === 'price-asc') {
+              products.sort(function(a, b) {
+                return parseInt($(a).find('.product-price').text()) - parseInt($(b).find('.product-price').text());
+              });
+            } else if (valueSelected === 'price-desc') {
+              products.sort(function(a, b) {
+                return parseInt($(b).find('.product-price').text()) - parseInt($(a).find('.product-price').text());
+              });
+            }
+        
+            $('.product-list').html(products);
+          });
+        });        
+      </script>
+      <h1 class="text my-5">Danh sách sản phẩm</h1>
+      <div class="sort d-flex justify-content-end mb-3">
+        <label for="sort-select" class="me-2">Sắp xếp theo:</label>
+        <select id="sort-select" class="form-select form-select-sm">
+          <option value="name-asc">Tên (A-Z)</option>
+          <option value="name-desc">Tên (Z-A)</option>
+          <option value="price-asc">Giá (thấp đến cao)</option>
+          <option value="price-desc">Giá (cao đến thấp)</option>
+        </select>
+      </div>
+      
+  
+      
+      <h1 class="text my-5">Danh sách sản phẩm</h1>
+      
+      <div class="product-list d-flex flex-wrap justify-content-center">
+        <div class="product-item card m-3" style="width: 18rem;">
+          <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product">
+          <div class="card-body">
+            <h2 class="card-title">Áo phông</h2>
+            <p class="card-text">Giá:  <span id="price"></span></p>
+            <a href="#" class="btn btn-primary">Mua ngay</a>
+          </div>
+        </div>
+      
+        <div class="product-list d-flex flex-wrap justify-content-center">
+          <div class="product-item card m-4" style="width: 18rem;">
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product">
+            <div class="card-body">
+              <h2 class="card-title">Áo khoác</h2>
+              <p class="card-text">Giá:  <span id="price1"></span></p>
+              <a href="#" class="btn btn-primary">Mua ngay</a>
+            </div>
+          </div>
+        </div>
+          <div class="product-list d-flex flex-wrap justify-content-center">
+            <div class="product-item card m-3" style="width: 18rem;">
+              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product">
+              <div class="card-body">
+                <h2 class="card-title">Áo flannel </h2>
+                <p class="card-text">Giá:  <span id="price2"></span></p>
+                <a href="#" class="btn btn-primary">Mua ngay</a>
+              </div>
+            </div>
+          </div>
+            <div class="product-list d-flex flex-wrap justify-content-center">
+              <div class="product-item card m-3" style="width: 18rem;">
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product">
+                <div class="card-body">
+                  <h2 class="card-title">Áo hoodie  </h2>
+                  <p class="card-text">Giá:  <span id="price3"></span></p>
+                  <a href="#" class="btn btn-primary">Mua ngay</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <script>
+          const priceEl = document.getElementById('price');
+          const price = 200000; // Giá của sản phẩm, có thể lấy từ database hoặc API
+        
+          priceEl.innerText = price.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Định dạng giá tiền theo định dạng VNĐ
+        </script>
+        <script>
+          const priceE2 = document.getElementById('price1');
+          const price1  = 100000; // Giá của sản phẩm, có thể lấy từ database hoặc API
+        
+          priceE2.innerText = price1.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Định dạng giá tiền theo định dạng VNĐ
+        </script>
+        <script>
+          const priceE3 = document.getElementById('price2');
+          const price2  = 300000; // Giá của sản phẩm, có thể lấy từ database hoặc API
+        
+          priceE3.innerText = price2.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Định dạng giá tiền theo định dạng VNĐ
+        </script>
+        <script>
+          const priceE4 = document.getElementById('price3');
+          const price3  = 400000; // Giá của sản phẩm, có thể lấy từ database hoặc API
+        
+          priceE4.innerText = price3.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' }); // Định dạng giá tiền theo định dạng VNĐ
+        </script>
+        
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
